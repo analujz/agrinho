@@ -1,0 +1,430 @@
+/* Variáveis CSS: Paleta de Cores, Fontes, Sombras, Espaçamentos */
+:root {
+    /* Cores Agrinho */
+    --color-agrinho-green: #37B34A; /* Verde principal, vibrante */
+    --color-agrinho-dark-green: #298E3A; /* Verde mais escuro para hover */
+    --color-agrinho-light-green: #E6F5E8; /* Verde muito claro para fundos sutis */
+    --color-agrinho-blue: #007BFF; /* Azul de destaque (opcional, para CTAs) */
+    --color-agrinho-gray: #4A4A4A; /* Cinza escuro para texto principal */
+    --color-agrinho-light-gray: #F5F5F5; /* Fundo geral claro */
+    --color-agrinho-white: #FFFFFF;
+
+    /* Tipografia */
+    --font-family-heading: 'Raleway', sans-serif; /* Fonte para títulos, mais marcante */
+    --font-family-body: 'Lato', sans-serif;      /* Fonte para o corpo do texto, legível */
+    --font-size-base: 1rem; /* 16px */
+
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 1rem;   /* 16px */
+    --spacing-md: 2rem;   /* 32px */
+    --spacing-lg: 4rem;   /* 64px */
+    --spacing-xl: 6rem;   /* 96px */
+
+    /* Sombras e Bordas */
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08); /* Sombra mais suave para elementos menores */
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada para destaque */
+    --border-radius: 0.75rem; /* 12px para todos os cantos arredondados */
+}
+
+/* Base Styles (Estilos Gerais do Corpo e Títulos) */
+body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-base);
+    line-height: 1.7; /* Espaçamento entre linhas para melhor leitura */
+    color: var(--color-agrinho-gray);
+    background-color: var(--color-agrinho-light-gray); /* Fundo suave para o corpo */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--color-agrinho-gray);
+    font-weight: 800; /* Títulos mais robustos e impactantes */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Tamanhos de Títulos Responsivos */
+h1 { font-size: 3.8rem; line-height: 1.1; } /* Título principal grande */
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-agrinho-green);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave para links */
+}
+
+a:hover {
+    color: var(--color-agrinho-dark-green);
+}
+
+/* Helper Classes (Para uso em HTML para consistência) */
+.text-primary-agrinho { color: var(--color-agrinho-green) !important; }
+.bg-primary-agrinho { background-color: var(--color-agrinho-green) !important; }
+.shadow-sm-agrinho { box-shadow: var(--shadow-light); }
+.shadow-md-agrinho { box-shadow: var(--shadow-medium); }
+.rounded-lg { border-radius: var(--border-radius); }
+
+/* --- Header / Hero Section (Seção de Destaque Inicial) --- */
+.hero-section {
+    /* Gradiente sobre imagem de fundo para um visual moderno */
+    background: linear-gradient(rgba(55, 179, 74, 0.9), rgba(55, 179, 74, 0.8)), url('./assets/image/campo-cidade-fundo.jpg') no-repeat center center/cover;
+    color: var(--color-agrinho-white);
+    padding: var(--spacing-xl) 0; /* Grande espaçamento vertical para destaque */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-medium); /* Sombra para dar profundidade */
+}
+
+.hero-section h1 {
+    font-size: 4.8rem;
+    font-weight: 900; /* Extra bold para impacto máximo */
+    color: var(--color-agrinho-white);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para o texto */
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero-section p {
+    font-size: 1.6rem;
+    font-weight: 300; /* Texto mais leve para subtítulo */
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: var(--spacing-xs);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Navbar (Barra de Navegação Principal) --- */
+.navbar {
+    background-color: var(--color-agrinho-dark-green) !important; /* Verde mais escuro para contraste */
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-xs) 0;
+    position: sticky; /* Fixa a navbar no topo ao rolar */
+    top: 0;
+    z-index: 1030; /* Garante que fique acima de outros elementos */
+}
+
+.navbar-brand {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    color: var(--color-agrinho-white) !important;
+    font-size: 1.8rem;
+    padding-left: var(--spacing-sm); /* Espaçamento do logo à esquerda */
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-agrinho-white) !important;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: all 0.3s ease-out; /* Transição suave para efeitos */
+    text-transform: uppercase; /* Links em maiúsculas */
+    letter-spacing: 0.05em; /* Espaçamento entre letras */
+    border-bottom: 3px solid transparent; /* Base para o efeito de underline animado */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--color-agrinho-light-green) !important; /* Cor mais clara no hover/ativo */
+    border-bottom-color: var(--color-agrinho-white); /* Underline branco */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+        
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* Borda sutil para o botão de hambúrguer */
+}
+
+.navbar-toggler-icon {
+    /* Ícone de hambúrguer personalizado (SVG) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-collapse {
+    background-color: var(--color-agrinho-dark-green); /* Fundo para o menu hambúrguer aberto */
+    padding: var(--spacing-sm) 0;
+    border-radius: 0 0 var(--border-radius) var(--border-radius); /* Bordas arredondadas na parte inferior */
+}
+
+/* --- Main Content Sections (Seções Principais de Conteúdo) --- */
+.main-section {
+    background-color: var(--color-agrinho-white);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light); /* Sombra leve para destacar a seção */
+}
+
+.main-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-agrinho-green); /* Título de seção em verde */
+    position: relative;
+    padding-bottom: var(--spacing-xs); /* Espaço para o underline */
+}
+
+/* Underline animado para títulos de seção */
+.main-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* Largura do underline */
+    height: 4px; /* Espessura do underline */
+    background-color: var(--color-agrinho-green);
+    border-radius: 2px;
+}
+
+.content-block {
+    display: flex; /* Utiliza Flexbox para alinhamento horizontal */
+    align-items: center; /* Centraliza itens verticalmente */
+    gap: var(--spacing-lg); /* Espaçamento entre texto e imagem */
+    margin-bottom: var(--spacing-lg);
+}
+
+.content-block.reverse {
+    flex-direction: row-reverse; /* Inverte a ordem em dispositivos maiores */
+}
+
+.content-block .text-content {
+    flex: 1; /* Faz o conteúdo de texto ocupar o espaço disponível */
+    padding-right: var(--spacing-md); /* Espaçamento à direita quando texto está à esquerda */
+}
+.content-block.reverse .text-content {
+    padding-left: var(--spacing-md); /* Espaçamento à esquerda quando texto está à direita */
+    padding-right: 0;
+}
+
+.text-justify {
+    text-align: justify;
+    font-size: 1.1rem;
+    color: var(--color-agrinho-gray);
+}
+
+.img-fluid-shadow { /* Estilo para imagens grandes em seções de conteúdo */
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease-out; /* Transição para efeito hover */
+}
+
+.img-fluid-shadow:hover {
+    transform: scale(1.03); /* Leve zoom ao passar o mouse */
+}
+
+/* --- Cards Section (Seção de Cartões de Informação) --- */
+.cards-section {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-item { /* Renomeado para evitar conflito com a classe .card do Bootstrap */
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    height: 100%; /* Garante altura uniforme com d-flex na coluna */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-md); /* Espaçamento entre cards em mobile */
+}
+
+.card-item:hover {
+    transform: translateY(-8px); /* Efeito de elevação pronunciado no hover */
+    box-shadow: var(--shadow-medium);
+}
+
+.card-img-top {
+    height: 200px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.card-body {
+    padding: var(--spacing-md);
+    flex-grow: 1; /* Permite que o corpo do card se expanda */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    color: var(--color-agrinho-dark-green);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs); /* Espaçamento entre título e ícone */
+    font-weight: 700;
+}
+
+.card-title i { /* Estilo para os ícones dentro dos títulos dos cards */
+    color: var(--color-agrinho-green);
+    font-size: 1.1em;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--color-agrinho-gray);
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1; /* Faz o texto ocupar o espaço disponível */
+}
+
+.btn-primary {
+    background-color: var(--color-agrinho-green);
+    border-color: var(--color-agrinho-green);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem; /* Ajuste de padding para botões */
+    border-radius: var(--border-radius); /* Botão mais arredondado */
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+.btn-primary:hover {
+    background-color: var(--color-agrinho-dark-green);
+    border-color: var(--color-agrinho-dark-green);
+    transform: translateY(-3px); /* Efeito de lift mais pronunciado no hover */
+    box-shadow: var(--shadow-light);
+}
+
+/* --- Carousel Section (Carrossel de Imagens/GIFs) --- */
+.carousel-section {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.carousel {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium); /* Sombra para o carrossel */
+}
+
+.carousel-item img {
+    height: 500px; /* Altura fixa para um visual imersivo */
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%; /* Aumenta a área de clique dos controles */
+    background-image: none; /* Remove a imagem padrão do Bootstrap */
+}
+        
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para os ícones */
+    border-radius: 50%; /* Torna o fundo redondo */
+    padding: 15px;
+    transition: background-color 0.3s ease-out;
+    display: flex; /* Para centralizar o ícone Font Awesome */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Tamanho do ícone */
+}
+/* Ícones Font Awesome para os controles do carrossel */
+.carousel-control-prev-icon::before { content: '\f053'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: white; }
+.carousel-control-next-icon::before { content: '\f054'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: white; }
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro no hover */
+}
+
+/* --- Footer (Rodapé) --- */
+.footer {
+    background-color: var(--color-agrinho-gray); /* Fundo cinza escuro */
+    color: var(--color-agrinho-white);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xl);
+    border-top: 5px solid var(--color-agrinho-green); /* Detalhe verde no topo do rodapé */
+}
+
+/* --- Responsividade (Media Queries para Adaptação a Telas Diferentes) --- */
+
+/* Extra large devices (desktops e telas maiores) */
+@media (max-width: 1200px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.8rem; }
+    .hero-section { padding: var(--spacing-lg) 0; }
+    .carousel-item img { height: 400px; }
+}
+
+/* Large devices (tablets e pequenos desktops) */
+@media (max-width: 991.98px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    .hero-section p { font-size: 1.3rem; }
+
+    /* Ajustes da Navbar para Mobile/Tablet */
+    .navbar-nav .nav-link {
+        padding: var(--spacing-sm) var(--spacing-sm);
+        border-bottom: none; /* Remove underline em mobile */
+    }
+    .navbar-nav .nav-link.active {
+        border-bottom: none;
+    }
+    .navbar-nav .nav-link:hover {
+        transform: none; /* Remove lift em mobile para melhor toque */
+    }
+
+    /* Ajustes das Seções de Conteúdo para Mobile/Tablet */
+    .content-block {
+        flex-direction: column; /* Colunas empilham verticalmente */
+        text-align: center;
+    }
+    .content-block.reverse {
+        flex-direction: column; /* Continua empilhando mesmo se invertido */
+    }
+    .content-block .text-content,
+    .content-block.reverse .text-content {
+        padding: 0; /* Remove padding lateral em telas menores */
+    }
+    .img-fluid-shadow {
+        margin-top: var(--spacing-md); /* Espaçamento superior para imagem empilhada */
+    }
+    
+    .card-item {
+        margin-bottom: var(--spacing-md); /* Espaçamento entre cards empilhados */
+    }
+    .carousel-item img { height: 300px; }
+    .carousel-control-prev, .carousel-control-next { width: 10%; }
+}
+
+/* Medium devices (landscape phones, small tablets) */
+@media (max-width: 767.98px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    .hero-section p { font-size: 1.1rem; }
+    .main-section { padding: var(--spacing-md); }
+    .card-item { margin-bottom: var(--spacing-sm); }
+    .carousel-item img { height: 250px; }
+}
+
+/* Small devices (portrait phones) */
+@media (max-width: 575.98px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    .hero-section { padding: var(--spacing-md) 0; }
+    .main-section { padding: var(--spacing-sm); margin-top: var(--spacing-sm); }
+    .carousel-item img { height: 200px; }
+}
